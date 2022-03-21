@@ -1,0 +1,41 @@
+{
+  "name": "thaghostest",
+  "version": "0.1.0",
+  "description": "A Next JS application using Jest to do form status validation and Cypress to validate form success status.",
+  "repository": "git+https://github.com/EduardoNoronha31/thaghostest.git",
+  "author": "Eduardo Noronha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EduardoNoronha31/thaghostest/issues"
+  },
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "commitizen": "^3.0.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^7.0.4"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "main": "index.js"
+}
