@@ -42,7 +42,7 @@ export const Form = () => {
           })
         }
       />
-      {isLoading ? <div>Loading</div> : undefined}
+      {isLoading ? <div>Loading</div> : false}
     </FormControl>
   );
 };

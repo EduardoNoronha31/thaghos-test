@@ -11,7 +11,7 @@ export const Header = () => {
     <Box
       sx={{
         display: 'flex',
-        bg: "red",
+        bg: 'red',
         mb: 10,
       }}
       color="red"
