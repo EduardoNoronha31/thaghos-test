@@ -1,13 +1,21 @@
-import { Button } from '@mui/material';
 import type { NextPage } from 'next';
+import { Box } from '@mui/material';
+import { Form } from '../components/Form';
+import { Header } from '../components/Header';
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <Button variant="text">Text</Button>
-      <Button variant="contained">Contained</Button>
-      <Button variant="outlined">Outlined</Button>
-    </div>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}
+    >
+      <Header />
+      <Form />
+    </Box>
   );
 };
 

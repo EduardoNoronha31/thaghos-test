@@ -1,10 +1,14 @@
-import type { AppProps } from 'next/app';
 import CssBaseline from '@mui/material/CssBaseline';
+import Home from './index'
+import Head from 'next/head';
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp() {
   return (
     <>
-      <Component {...pageProps} />
+      <Head>
+        <title>Thaghos Test</title>
+      </Head>
+      <Home /> 
       <CssBaseline />
     </>
   );
