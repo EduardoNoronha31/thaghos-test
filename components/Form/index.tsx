@@ -1,6 +1,6 @@
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import { TextField, Button, Box, FormControl } from '@mui/material';
+import { TextField, Button, Box } from '@mui/material';
 import { useState } from 'react';
 import { FormLoading } from '../FormLoading/index';
 import { useRouter } from 'next/router';
@@ -40,9 +40,9 @@ export const Form = () => {
     onSubmit: (values) => {
       setIsLoadingForm(true);
       setTimeout(() => {
-        localStorage.setItem("signUp", JSON.stringify(values))
+        localStorage.setItem('signUp', JSON.stringify(values));
         setIsLoadingForm(false);
-        router.push('/login');
+        router.push('/recorded-data');
       }, 3000);
     },
   });

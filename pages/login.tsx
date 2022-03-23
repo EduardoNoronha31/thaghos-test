@@ -10,9 +10,7 @@ const Login: NextPage = () => {
       <Box
         sx={{
           display: 'flex',
-          // flexDirection: 'column',
-          // justifyContent: 'center',
-          // alignItems: 'center',
+          justifyContent: 'center',
         }}
       >
         <Form />
