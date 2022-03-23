@@ -14,9 +14,7 @@ export const FormLoading = () => {
       <CircularProgress
         disableShrink
         size={20}
-        sx={{ mb: 1 }}
       />
-      <Typography variant="subtitle1">Aguarde...</Typography>
     </Box>
   );
 };

@@ -9,12 +9,12 @@ const Home: NextPage = () => {
     router.push('/login');
   };
   return (
-    <Box sx={{ backgroundColor: '#01526d', width: '100%', height: '100%' }}>
+    <Box sx={{ backgroundColor: '#01526d', width: '100%', height: '100vh' }}>
       <Header />
       <Box
         sx={{
           width: '100%',
-          height: '100vh',
+          height: 'auto',
           display: 'flex',
           justifyContent: 'center',
         }}
@@ -23,7 +23,7 @@ const Home: NextPage = () => {
           elevation={6}
           sx={{
             width: '70%',
-            height: '62vh',
+            height: 'auto',
             mt: '4rem',
             mb: '2rem',
             display: 'flex',

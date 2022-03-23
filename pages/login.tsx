@@ -5,16 +5,9 @@ import { Header } from '../components/Header';
 
 const Login: NextPage = () => {
   return (
-    <Box>
+    <Box sx={{background: '#01526d', width: '100%', height: '100vh'}}>
       <Header />
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'center',
-        }}
-      >
-        <Form />
-      </Box>
+      <Form />
     </Box>
   );
 };
