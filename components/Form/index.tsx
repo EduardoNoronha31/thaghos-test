@@ -43,7 +43,7 @@ export const Form = () => {
         localStorage.setItem("signUp", JSON.stringify(values))
         setIsLoadingForm(false);
         router.push('/login');
-      }, 2000);
+      }, 3000);
     },
   });
 
@@ -86,7 +86,7 @@ export const Form = () => {
         <Button type="submit" variant="outlined">
           Submit
         </Button>
-        {isLoadingForm ? <FormLoading /> : undefined}
+        {isLoadingForm ? <FormLoading /> : false}
       </form>
     </Box>
   );
