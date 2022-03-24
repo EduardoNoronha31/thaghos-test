@@ -2,12 +2,11 @@ import { render, screen } from '@testing-library/react';
 import { Header } from './index';
 
 describe('<Header />', () => {
-  it('should render a header home button', () => {
+  it('should render a header home link', () => {
     render(<Header />);
-    const homeButton = screen.getByText('Home');
-
-    expect(homeButton).toBeInTheDocument();
-    expect(homeButton).toHaveStyle({
+    const homeLink = screen.getByText('Home');
+    expect(homeLink).toBeInTheDocument();
+    expect(homeLink).toHaveStyle({
       color: '#fff',
     });
   });
