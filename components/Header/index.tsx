@@ -1,6 +1,4 @@
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
+import { AppBar, Toolbar, Link } from '@mui/material';
 
 export const Header = () => {
   return (
@@ -16,10 +14,12 @@ export const Header = () => {
         sx={{
           boxShadow: '0px 15px 34px 8px rgba(0, 0, 0, .1)',
           display: 'flex',
-          justifyContent: 'center',
         }}
       >
         <img src="logo.png" height={40} />
+        <Link ml={2} color="#fff" href="/">
+          Home
+        </Link>
       </Toolbar>
     </AppBar>
   );

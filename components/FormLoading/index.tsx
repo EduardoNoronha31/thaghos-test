@@ -1,4 +1,4 @@
-import { Box, CircularProgress, Typography } from '@mui/material';
+import { Box, CircularProgress } from '@mui/material';
 
 export const FormLoading = () => {
   return (
@@ -11,10 +11,7 @@ export const FormLoading = () => {
         mt: 2,
       }}
     >
-      <CircularProgress
-        disableShrink
-        size={20}
-      />
+      <CircularProgress disableShrink size={20} />
     </Box>
   );
 };

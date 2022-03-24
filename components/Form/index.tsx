@@ -1,9 +1,9 @@
-import { useFormik } from 'formik';
-import * as yup from 'yup';
-import { TextField, Button, Box, Paper, Typography } from '@mui/material';
 import { useState } from 'react';
-import { FormLoading } from '../FormLoading/index';
 import { useRouter } from 'next/router';
+import * as yup from 'yup';
+import { useFormik } from 'formik';
+import { TextField, Button, Box, Paper, Typography } from '@mui/material';
+import { FormLoading } from '../FormLoading/index';
 
 export type SignUp = {
   name: string;
@@ -65,11 +65,11 @@ export const Form = () => {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            mt: '2rem'
+            mt: '2rem',
           }}
         >
           <Typography variant="h6" mt={2} color="#01526d">
-            Do login to save your data.
+            Fill the form
           </Typography>
           <TextField
             id="name"
@@ -124,7 +124,7 @@ export const Form = () => {
               mt: '.4rem',
             }}
           >
-            Submit
+            Send
           </Button>
           {isLoadingForm ? <FormLoading /> : false}
           <img src="backgroundLogin.svg" alt="Background Login" width="300" />
