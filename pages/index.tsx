@@ -73,7 +73,7 @@ const Home: NextPage = () => {
               }}
               onClick={redirectToLoginPage}
             >
-              Login
+              Register
             </Button>
           </Box>
         </Paper>
