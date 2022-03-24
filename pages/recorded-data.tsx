@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
 import { Box, Stack, Paper, Typography } from '@mui/material';
-import type { SignUp } from '../components/Form/';
-import { Header } from '../components/Header';
 import styled from '@emotion/styled';
+import { Header } from '../components/Header';
+import type { SignUp } from '../components/Form/';
 
 const Item = styled(Paper)(() => ({
   backgroundColor: 'white',
@@ -15,7 +15,7 @@ const Item = styled(Paper)(() => ({
 
 const RecordedData: NextPage = () => {
   const signUpData = localStorage.getItem('signUp');
-  const signUpFormated: SignUp = JSON.parse(signUpData as string);
+  const signUpFormatedData: SignUp = JSON.parse(signUpData as string);
   return (
     <Box sx={{ background: '#01526d', width: '100%', height: '100vh' }}>
       <Header />
@@ -31,11 +31,11 @@ const RecordedData: NextPage = () => {
         </Typography>
         <Stack spacing={2}>
           <Typography>Name:</Typography>
-          <Item>{signUpFormated.name}</Item>
+          <Item>{signUpFormatedData.name}</Item>
           <Typography>Email:</Typography>
-          <Item>{signUpFormated.email}</Item>
+          <Item>{signUpFormatedData.email}</Item>
           <Typography>Password:</Typography>
-          <Item>{signUpFormated.password}</Item>
+          <Item>{signUpFormatedData.password}</Item>
         </Stack>
       </Box>
     </Box>

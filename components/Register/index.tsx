@@ -1,8 +1,9 @@
-import { Box, Button, Paper, Typography } from '@mui/material';
 import { useRouter } from 'next/router';
+import { Box, Button, Paper, Typography } from '@mui/material';
 
 export const Register = () => {
   const router = useRouter();
+
   const redirectToLoginPage = () => {
     router.push('/login');
   };

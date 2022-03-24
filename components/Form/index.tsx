@@ -1,7 +1,7 @@
-import { useState } from 'react';
 import { useRouter } from 'next/router';
-import * as yup from 'yup';
+import { useState } from 'react';
 import { useFormik } from 'formik';
+import * as yup from 'yup';
 import { TextField, Button, Box, Paper, Typography } from '@mui/material';
 import { FormLoading } from '../FormLoading/index';
 
@@ -73,7 +73,6 @@ export const Form = () => {
             Fill the form
           </Typography>
           <TextField
-            inputProps={{ "data-testid": "input-name" }}
             id="name"
             name="name"
             label="Name"
@@ -119,7 +118,6 @@ export const Form = () => {
             }}
           />
           <Button
-          data-testid="form-btn"
             type="submit"
             variant="outlined"
             sx={{
