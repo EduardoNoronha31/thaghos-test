@@ -66,6 +66,7 @@ export const Form = () => {
             flexDirection: 'column',
             alignItems: 'center',
             mt: '2rem',
+            mb: '2rem',
           }}
         >
           <Typography variant="h6" mt={2} color="#01526d">
