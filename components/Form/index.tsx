@@ -73,6 +73,7 @@ export const Form = () => {
             Fill the form
           </Typography>
           <TextField
+            inputProps={{ "data-testid": "input-name" }}
             id="name"
             name="name"
             label="Name"
@@ -118,6 +119,7 @@ export const Form = () => {
             }}
           />
           <Button
+          data-testid="form-btn"
             type="submit"
             variant="outlined"
             sx={{
