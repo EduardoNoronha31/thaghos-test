@@ -1,6 +1,6 @@
 import { Box, CircularProgress } from '@mui/material';
 
-export const FormLoading = () => {
+const FormLoading = () => {
   return (
     <Box
       sx={{
@@ -15,3 +15,5 @@ export const FormLoading = () => {
     </Box>
   );
 };
+
+export default FormLoading;

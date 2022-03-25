@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Register } from './index';
+import Register from './index';
 
 describe('<Register />', () => {
   it('should render a text in register component', () => {

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Header } from './index';
+import Header from './index';
 
 describe('<Header />', () => {
   it('should render a header home link', () => {

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Form } from './index';
+import Form from './index';
 
 describe('<Form />', () => {
   it('should render a form', () => {
