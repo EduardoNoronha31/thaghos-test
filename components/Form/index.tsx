@@ -1,8 +1,8 @@
+import { Box, Button, Paper, TextField, Typography } from '@mui/material';
+import { useFormik } from 'formik';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { useFormik } from 'formik';
 import * as yup from 'yup';
-import { TextField, Button, Box, Paper, Typography } from '@mui/material';
 import { FormLoading } from '../FormLoading/index';
 
 export type SignUp = {
@@ -11,16 +11,9 @@ export type SignUp = {
   password: string;
 };
 
-export const Form = () => {
-  const signUpInitialValues: SignUp = {
-    name: '',
-    email: '',
-    password: '',
-  };
-
+const Form = () => {
   const [isLoadingForm, setIsLoadingForm] = useState<boolean>(false);
   const router = useRouter();
-
   const validationSchema = yup.object({
     name: yup.string().required('Name is required.'),
     email: yup
@@ -33,9 +26,12 @@ export const Form = () => {
       .min(8, 'Password is too short - should be 8 chars minimum.')
       .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
   });
-
-  const formik = useFormik({
-    initialValues: signUpInitialValues,
+  const formik = useFormik<SignUp>({
+    initialValues: {
+      name: '',
+      email: '',
+      password: '',
+    },
     validationSchema: validationSchema,
     onSubmit: (values) => {
       setIsLoadingForm(true);
@@ -46,91 +42,88 @@ export const Form = () => {
       }, 3000);
     },
   });
-
   return (
     <Box
       sx={{
-        width: '100%',
-        height: 'auto',
         display: 'flex',
+        height: 'auto',
         justifyContent: 'center',
+        width: '100%',
       }}
     >
-      <form onSubmit={formik.handleSubmit}>
-        <Paper
-          elevation={6}
+      <Paper
+        elevation={6}
+        sx={{
+          alignItems: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          height: 'auto',
+          mb: '2rem',
+          mt: '2rem',
+          width: '80vw',
+        }}
+      >
+        <Typography variant="h6" sx={{ color: '#01526d', mt: 2 }}>
+          Fill the form
+        </Typography>
+        <TextField
+          name="name"
+          label="Name"
+          autoFocus
+          margin="normal"
+          value={formik.values.name}
+          onChange={formik.handleChange}
+          error={formik.touched.name && Boolean(formik.errors.name)}
+          helperText={formik.touched.name && formik.errors.name}
           sx={{
-            width: '80vw',
-            height: 'auto',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            mt: '2rem',
-            mb: '2rem',
+            marginX: '1rem',
+            width: '50vw',
+          }}
+        />
+        <TextField
+          name="email"
+          label="Email"
+          margin="normal"
+          type="email"
+          value={formik.values.email}
+          onChange={formik.handleChange}
+          error={formik.touched.email && Boolean(formik.errors.email)}
+          helperText={formik.touched.email && formik.errors.email}
+          sx={{
+            marginX: '1rem',
+            width: '50vw',
+          }}
+        />
+        <TextField
+          name="password"
+          label="Password"
+          margin="normal"
+          type="password"
+          value={formik.values.password}
+          onChange={formik.handleChange}
+          error={formik.touched.password && Boolean(formik.errors.password)}
+          helperText={formik.touched.password && formik.errors.password}
+          sx={{
+            marginX: '1rem',
+            width: '50vw',
+          }}
+        />
+        <Button
+          type="submit"
+          variant="outlined"
+          onClick={() => formik.handleSubmit()}
+          sx={{
+            mt: '.4rem',
+            width: '10rem',
           }}
         >
-          <Typography variant="h6" mt={2} color="#01526d">
-            Fill the form
-          </Typography>
-          <TextField
-            id="name"
-            name="name"
-            label="Name"
-            autoFocus
-            margin="normal"
-            defaultValue={formik.initialValues.name}
-            onChange={formik.handleChange}
-            error={formik.touched.name && Boolean(formik.errors.name)}
-            helperText={formik.touched.name && formik.errors.name}
-            sx={{
-              marginX: '1rem',
-              width: '50vw',
-            }}
-          />
-          <TextField
-            id="email"
-            name="email"
-            label="Email"
-            margin="normal"
-            type="email"
-            defaultValue={formik.initialValues.email}
-            onChange={formik.handleChange}
-            error={formik.touched.email && Boolean(formik.errors.email)}
-            helperText={formik.touched.email && formik.errors.email}
-            sx={{
-              marginX: '1rem',
-              width: '50vw',
-            }}
-          />
-          <TextField
-            id="password"
-            name="password"
-            label="Password"
-            margin="normal"
-            type="password"
-            defaultValue={formik.initialValues.password}
-            onChange={formik.handleChange}
-            error={formik.touched.password && Boolean(formik.errors.password)}
-            helperText={formik.touched.password && formik.errors.password}
-            sx={{
-              marginX: '1rem',
-              width: '50vw',
-            }}
-          />
-          <Button
-            type="submit"
-            variant="outlined"
-            sx={{
-              width: '10rem',
-              mt: '.4rem',
-            }}
-          >
-            Send
-          </Button>
-          {isLoadingForm ? <FormLoading /> : false}
-          <img src="backgroundLogin.svg" alt="Background Login" width="300" />
-        </Paper>
-      </form>
+          Send
+        </Button>
+        {isLoadingForm ? <FormLoading /> : false}
+        <img src="backgroundForm.svg" alt="Background Form" width="300" />
+      </Paper>
     </Box>
   );
 };
+
+export default Form;

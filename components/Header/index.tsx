@@ -1,6 +1,6 @@
-import { AppBar, Toolbar, Link } from '@mui/material';
+import { AppBar, Link, Toolbar } from '@mui/material';
 
-export const Header = () => {
+const Header = () => {
   return (
     <AppBar
       position="static"
@@ -24,3 +24,5 @@ export const Header = () => {
     </AppBar>
   );
 };
+
+export default Header;

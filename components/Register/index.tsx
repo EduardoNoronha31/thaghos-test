@@ -1,50 +1,46 @@
-import { useRouter } from 'next/router';
 import { Box, Button, Paper, Typography } from '@mui/material';
+import { useRouter } from 'next/router';
 
-export const Register = () => {
+const Register = () => {
   const router = useRouter();
-
-  const redirectToLoginPage = () => {
-    router.push('/login');
-  };
-
+  const redirectToLoginPage = () => router.push('/login');
   return (
     <Box
       sx={{
-        width: '100%',
-        height: 'auto',
         display: 'flex',
+        height: 'auto',
         justifyContent: 'center',
+        width: '100%',
       }}
     >
       <Paper
         elevation={6}
         sx={{
-          width: '70%',
-          height: 'auto',
-          mt: '4rem',
-          mb: '2rem',
           display: 'flex',
+          height: 'auto',
           flexDirection: 'column',
+          mb: '2rem',
+          mt: '4rem',
+          width: '70%',
         }}
       >
         <Box
           sx={{
             display: 'flex',
-            width: '100%',
             height: '20rem',
             justifyContent: 'center',
+            width: '100%',
           }}
         >
-          <img src="background.svg" alt="Background" width={500} />
+          <img src="backgroundRegister.svg" alt="Background Register" width={500} />
         </Box>
         <Box
           sx={{
+            alignItems: 'center',
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center',
-            width: '100',
             height: 'auto',
+            width: '100',
           }}
         >
           <Typography
@@ -78,3 +74,5 @@ export const Register = () => {
     </Box>
   );
 };
+
+export default Register;

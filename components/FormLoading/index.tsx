@@ -4,10 +4,10 @@ export const FormLoading = () => {
   return (
     <Box
       sx={{
-        display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center',
+        display: 'flex',
         flexDirection: 'column',
+        justifyContent: 'center',
         mt: 2,
       }}
     >

@@ -1,9 +1,9 @@
 import Document, {
   DocumentContext,
+  Head,
   Html,
   Main,
   NextScript,
-  Head,
 } from 'next/document';
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
