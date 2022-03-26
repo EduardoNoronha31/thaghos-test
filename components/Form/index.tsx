@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import * as yup from 'yup';
-import { FormLoading } from '../FormLoading/index';
+import FormLoading from '../FormLoading/index';
 
 export type SignUp = {
   name: string;
